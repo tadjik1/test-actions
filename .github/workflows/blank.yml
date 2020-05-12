@@ -33,7 +33,6 @@ jobs:
         DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
         DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-
       run: |
         mkdir ~/.ssh
         ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts
